@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Allocate a media budget using saturating response curves and posterior risk penalties.">
+  <title>MixPriors · Working Lab</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#results">Skip to results</a>
+  <header class="masthead"><a class="brand" href="https://github.com/Vengaiahmadineni/mixpriors">MixPriors</a><span class="build-state"><i></i> live computation</span></header>
+  <main>
+    <section class="intro">
+      <p class="eyebrow">Risk-aware media allocation</p>
+      <h1>Run the decision,<br><em>inspect the evidence.</em></h1>
+      <p class="lede">Allocate a media budget using saturating response curves and posterior risk penalties.</p>
+    </section>
+    <section class="workspace" aria-label="Interactive project workspace">
+      <form id="workspace-form" class="control-panel">
+        <div class="panel-heading"><span>01</span><div><p>Inputs</p><h2>Configure the run</h2></div></div>
+        <div class="fields"><label class="field" for="budget"><span>Budget to allocate</span><input id="budget" name="budget" type="number" value="20" min="1" max="100" step="any" data-suggested-step="1"></label>
+<label class="field" for="riskAversion"><span>Risk aversion</span><input id="riskAversion" name="riskAversion" type="number" value="0.35" min="0" max="2" step="any" data-suggested-step="0.05"></label>
+<label class="field" for="channels"><span>Channel assumptions as JSON</span><textarea id="channels" name="channels" rows="9">[{&quot;name&quot;:&quot;Search&quot;,&quot;coefficient&quot;:9,&quot;saturation&quot;:7,&quot;uncertainty&quot;:0.12},{&quot;name&quot;:&quot;Social&quot;,&quot;coefficient&quot;:7,&quot;saturation&quot;:10,&quot;uncertainty&quot;:0.25},{&quot;name&quot;:&quot;Video&quot;,&quot;coefficient&quot;:12,&quot;saturation&quot;:18,&quot;uncertainty&quot;:0.35}]</textarea></label></div>
+        <div class="actions"><button class="run" type="submit">Run analysis <span>→</span></button><button id="reset-button" class="reset" type="button">Reset</button></div>
+      </form>
+      <section id="results" class="result-panel" aria-live="polite" aria-busy="true">
+        <div class="panel-heading"><span>02</span><div><p>Output</p><h2>Decision trace</h2></div></div>
+        <div id="result-content" class="result-content"><div class="loading">Computing initial scenario…</div></div>
+      </section>
+    </section>
+  </main>
+  <footer><p>Built from the tested logic in <a href="https://github.com/Vengaiahmadineni/mixpriors">Vengaiahmadineni/mixpriors</a>.</p></footer>
+  <script type="module" src="app.mjs"></script>
+</body>
+</html>
